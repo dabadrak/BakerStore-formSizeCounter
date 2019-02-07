@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    html {
+      font-family: Arial sans-serif;
+    }
+    .container form {
+      display: flex;
+      flex-direction: column;
+    }
+    #submit {
+      width: 100px;
+      height: 30px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <form action="#">
+    <label>
+      <input id="have" class="input" type="number" required>
+      *Диаметр вашей формы
+    </label>
+    <label>
+      <input id="haveHeight" class="input" type="number">
+      Высота вашей формы
+    </label>
+    <label>
+      <input id="need" class="input" type="number" required>
+      *Диаметр формы в рецепте
+    </label>
+    <label>
+      <input id="needHeight" class="input" type="number">
+      Высота формы в рецепте
+    </label>
+    <label>
+      <input id="result" readonly>
+      Ваш коэффициент
+    </label>
+    <button id="submit">Рассчитать</button>
+  </form>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="FormCounter.js"></script>
+<script>
+  "use strict";
+
+  $(document).ready(() => {
+    let counter = new FormCounter('#have', '#haveHeight', '#need', '#needHeight', '#result', '#submit')
+  });
+</script>
+</body>
+</html>
